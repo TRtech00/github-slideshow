@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title | default: "GamePulse" }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/game.css' | relative_url }}" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Game<span>Pulse</span></div>
+    <nav class="main-nav">
+      <a href="#haberler">Haberler</a>
+      <a href="#incelemeler">İncelemeler</a>
+      <a href="#en-cok-okunan">En Çok Okunanlar</a>
+      <a href="#etkinlikler">Etkinlikler</a>
+    </nav>
+    <div class="auth-actions">
+      <button class="ghost" data-tab-target="#login">Giriş Yap</button>
+      <button data-tab-target="#register">Kayıt Ol</button>
+    </div>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h4>GamePulse</h4>
+        <p>Gündemdeki oyun haberlerini, detaylı incelemeleri ve topluluğun sesini aynı çatı altında topluyoruz.</p>
+      </div>
+      <div>
+        <h4>Hızlı Erişim</h4>
+        <ul>
+          <li><a href="#haberler">Son Haberler</a></li>
+          <li><a href="#incelemeler">İnceleme Arşivi</a></li>
+          <li><a href="#en-cok-okunan">Trendler</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Topluluk</h4>
+        <ul>
+          <li><a href="#etkinlikler">Canlı Yayın Takvimi</a></li>
+          <li><a href="#bulten">Haftalık Bülten</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-meta">© {{ 'now' | date: '%Y' }} GamePulse • Tüm hakları saklıdır.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const tabButtons = document.querySelectorAll('[data-tab-target]');
+      const tabPanels = document.querySelectorAll('.auth-panel');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetSelector = button.dataset.tabTarget;
+          const target = document.querySelector(targetSelector);
+          if (!target) return;
+
+          tabPanels.forEach(panel => panel.classList.remove('active'));
+          target.classList.add('active');
+
+          document
+            .querySelectorAll('[data-tab-target]')
+            .forEach(btn => btn.classList.remove('active'));
+          document
+            .querySelectorAll(`[data-tab-target="${targetSelector}"]`)
+            .forEach(btn => btn.classList.add('active'));
+
+          const authSection = document.querySelector('.auth-section');
+          if (authSection) {
+            authSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
