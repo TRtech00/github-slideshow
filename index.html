@@ -1,13 +1,194 @@
 ---
-layout: presentation
+layout: game-site
+title: GamePulse — Oyun Haber ve İnceleme Merkezi
 ---
+<section class="hero">
+  <div class="hero-text">
+    <h1>Oyun Dünyasının Nabzı <span>GamePulse</span>’ta Atıyor</h1>
+    <p>Yeni çıkan oyunların haberlerini, kapsamlı incelemelerini ve topluluğun konuştuğu trendleri tek bir platformda bul. GamePulse ile hiçbir şeyi kaçırma.</p>
+    <div class="hero-stats">
+      <div>
+        <strong>+120</strong>
+        <span>Haftalık Haber</span>
+      </div>
+      <div>
+        <strong>35</strong>
+        <span>Derinlemesine İnceleme</span>
+      </div>
+      <div>
+        <strong>250K</strong>
+        <span>Aktif Okuyucu</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <img src="https://images.unsplash.com/photo-1486572788966-cfd3df1f5b42?auto=format&fit=crop&w=900&q=80" alt="Oyun kontrolcüsü" loading="lazy" />
+      <h3>Haftanın Oyunu: Neon Odyssey</h3>
+      <p>Kara deliğin ötesindeki şehirde geçen cyberpunk temalı aksiyon-macera oyunu Neon Odyssey, ışık hızında tempolu dövüşleriyle yılın sürprizi oldu.</p>
+      <time datetime="2024-05-12">12 Mayıs 2024</time>
+    </div>
+  </div>
+</section>
 
-{% for post in site.posts reversed %}
-	{% include slide.html %}
-	<div class="page-break"></div>
-{% endfor %}
-{% unless site.simple-slideshow %}
-{% if site.overview %}
-<section id="overview" class="step" {% for attr in site.overview-data %} data-{{attr[0]}}="{{attr[1]}}"{% endfor %}></section>
-{% endif %}
-{% endunless %}
+<div class="layout-split">
+  <section id="haberler">
+    <div class="section-title">
+      <h2>Son Haberler</h2>
+      <a href="#">Tüm haberler</a>
+    </div>
+    <div class="grid news-grid">
+      <article class="card">
+        <h3>Starfield’e Devasa “Aurora” Güncellemesi Geliyor</h3>
+        <p>Bethesda, oyuncuların geri bildirimleri doğrultusunda hazırladığı yeni içerik paketinde, mod desteğini genişleten araçların yanı sıra keşfedilebilir dört yeni yıldız sistemini duyurdu.</p>
+        <time datetime="2024-05-10">10 Mayıs 2024</time>
+      </article>
+      <article class="card">
+        <h3>Valorant Masters İstanbul 2024 Programı Açıklandı</h3>
+        <p>Riot Games, turnuva tarihlerini ve davet edilen takımları paylaştı. Şampiyonluk mücadelesinin final bileti şimdiden tükendi; etkinlik şehri oyun festivali atmosferine bürünüyor.</p>
+        <time datetime="2024-05-09">9 Mayıs 2024</time>
+      </article>
+      <article class="card">
+        <h3>PlayStation Showcase 2024’ten Öne Çıkanlar</h3>
+        <p>Sony, yeni IP’ler ve sevilen serilerin devam oyunlarından oluşan bir portföy sundu. Özellikle Horizon dünyasına dair yeni kooperatif projesi büyük ilgi topladı.</p>
+        <time datetime="2024-05-08">8 Mayıs 2024</time>
+      </article>
+    </div>
+  </section>
+
+  <aside id="en-cok-okunan" class="trending-list">
+    <h2>En Çok Okunanlar</h2>
+    <ol>
+      <li>
+        <a href="#">Efsane Geri Döndü: Prince of Persia Reboot İncelemesi</a>
+        <span>145.823 görüntülenme</span>
+      </li>
+      <li>
+        <a href="#">Steam Deck 2 Söylentileri: Bilinen Her Şey</a>
+        <span>112.094 görüntülenme</span>
+      </li>
+      <li>
+        <a href="#">The Last Sentinel İlk Bakış</a>
+        <span>97.556 görüntülenme</span>
+      </li>
+      <li>
+        <a href="#">Indie Radar: Pixel Frontier Geliştirici Röportajı</a>
+        <span>82.440 görüntülenme</span>
+      </li>
+    </ol>
+  </aside>
+</div>
+
+<section id="incelemeler">
+  <div class="section-title">
+    <h2>İncelemeler</h2>
+    <a href="#">Tüm incelemeler</a>
+  </div>
+  <div class="grid reviews-grid">
+    <article class="card">
+      <div class="review-score">9.2 / 10</div>
+      <h3>Neon Odyssey</h3>
+      <p>Geleceğin metropolünde geçen Neon Odyssey, kusursuz atmosferi ve sürükleyici anlatısıyla yılın en güçlü adaylarından biri olmayı başarıyor.</p>
+      <time datetime="2024-05-06">6 Mayıs 2024</time>
+    </article>
+    <article class="card">
+      <div class="review-score">8.5 / 10</div>
+      <h3>Legends Reborn</h3>
+      <p>Takım tabanlı savaşları strateji öğeleriyle buluşturan Legends Reborn, rekabetçi sahnede yer edinebilecek potansiyele sahip.</p>
+      <time datetime="2024-05-04">4 Mayıs 2024</time>
+    </article>
+    <article class="card">
+      <div class="review-score">7.9 / 10</div>
+      <h3>Celestial Trails</h3>
+      <p>Roguelike formülünü uzay temasıyla harmanlayan yapım, etkileyici görselliğine rağmen denge sorunlarıyla dikkat çekiyor.</p>
+      <time datetime="2024-05-01">1 Mayıs 2024</time>
+    </article>
+  </div>
+</section>
+
+<section class="auth-section" aria-labelledby="uyelik">
+  <div class="section-title">
+    <h2 id="uyelik">Topluluğa Katıl</h2>
+    <span>Giriş yap veya hemen kayıt ol.</span>
+  </div>
+  <div class="auth-tabs">
+    <button class="active" data-tab-target="#login">Giriş Yap</button>
+    <button data-tab-target="#register">Kayıt Ol</button>
+  </div>
+  <div class="auth-panels">
+    <div id="login" class="auth-panel active">
+      <form>
+        <label>E-posta
+          <input type="email" name="email" placeholder="ornek@mail.com" required />
+        </label>
+        <label>Şifre
+          <input type="password" name="password" placeholder="••••••••" required />
+        </label>
+        <button type="submit">Giriş Yap</button>
+      </form>
+      <div class="panel-info">
+        <h3>GamePulse+ Avantajları</h3>
+        <p>Reklamsız deneyim, erken erişimli incelemeler ve özel canlı yayınlara katılma hakkı.</p>
+      </div>
+    </div>
+    <div id="register" class="auth-panel">
+      <form>
+        <label>Kullanıcı Adı
+          <input type="text" name="username" placeholder="oyuncu123" required />
+        </label>
+        <label>E-posta
+          <input type="email" name="email" placeholder="ornek@mail.com" required />
+        </label>
+        <label>Şifre
+          <input type="password" name="password" placeholder="En az 8 karakter" required />
+        </label>
+        <button type="submit">Kayıt Ol</button>
+      </form>
+      <div class="panel-info">
+        <h3>Hoş Geldin Paketi</h3>
+        <p>Favori oyunların için kişiselleştirilmiş akış ve topluluk forumlarına erişim.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="etkinlikler" class="events">
+  <div class="section-title">
+    <h2>Canlı Yayın &amp; Etkinlik Takvimi</h2>
+    <a href="#">Takvimi İndir</a>
+  </div>
+  <div class="events-list">
+    <article>
+      <div>
+        <h3>GamePulse Live: Indie Spotlight</h3>
+        <p class="event-meta">15 Mayıs 2024 • 21:00 • Twitch</p>
+      </div>
+      <a href="#" class="ghost-link">Hatırlat</a>
+    </article>
+    <article>
+      <div>
+        <h3>Masters İstanbul Canlı Yayını</h3>
+        <p class="event-meta">18 Mayıs 2024 • 18:30 • YouTube</p>
+      </div>
+      <a href="#" class="ghost-link">Hatırlat</a>
+    </article>
+    <article>
+      <div>
+        <h3>Neon Odyssey Geliştirici Soru-Cevap</h3>
+        <p class="event-meta">22 Mayıs 2024 • 20:00 • Discord</p>
+      </div>
+      <a href="#" class="ghost-link">Hatırlat</a>
+    </article>
+  </div>
+</section>
+
+<section id="bulten" class="newsletter" aria-labelledby="newsletter-title">
+  <div>
+    <h2 id="newsletter-title">Haftalık Bülten</h2>
+    <p>Her Pazartesi gelen kutunda en güncel oyun haberleri, inceleme özetleri ve editörün seçtikleri seni bekliyor.</p>
+  </div>
+  <form>
+    <input type="email" name="newsletter-email" placeholder="E-posta adresin" required />
+    <button type="submit">Abone Ol</button>
+  </form>
+</section>
